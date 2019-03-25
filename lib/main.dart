@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MyFirstWidget());
@@ -12,10 +12,15 @@ class MyFirstWidget extends StatelessWidget {
     Image myImage = Image.network(
         "https://images.pexels.com/photos/1168940/pexels-photo-1168940.jpeg");
 
-    return Center(child: Column(
-        children: <Widget>[myText, myImage],
-        mainAxisSize: MainAxisSize.min
-      )
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(title: Text("My App")),
+            body: Center(
+              child: Column(
+                  children: <Widget>[myText, myImage],
+                  mainAxisSize: MainAxisSize.min),
+            )
+        )
     );
   }
 }
