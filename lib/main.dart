@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyFirstWidget());
+  runApp(new MySecondWidget());
 }
 
 class MyFirstWidget extends StatelessWidget {
@@ -22,5 +22,44 @@ class MyFirstWidget extends StatelessWidget {
             )
         )
     );
+  }
+}
+
+class MySecondWidget extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return MyState();
+  }
+}
+
+class MyState extends State<MySecondWidget>{
+
+  String url = "https://source.unsplash.com/random/800x600"; // A random image from Unsplash
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              RaisedButton(
+                child: Text("Press me"),
+                onPressed: changeURI,
+              ),
+              Image.network(url)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void changeURI() {
+    setState(() {
+      url = "https://source.unsplash.com/random/800x600/?" +
+          "q=${new DateTime.now().millisecondsSinceEpoch}";
+    });
   }
 }
