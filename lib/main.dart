@@ -10,7 +10,7 @@ class MyFirstWidget extends StatelessWidget {
     Text myText =
         Text("This is a nice photo!", textDirection: TextDirection.ltr);
     Image myImage = Image.network(
-        "https://images.pexels.com/photos/1168940/pexels-photo-1168940.jpeg");
+        "https://images.pexels.com/photos/2781760/pexels-photo-2781760.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 
     return MaterialApp(
         home: Scaffold(
@@ -34,7 +34,7 @@ class MySecondWidget extends StatefulWidget{
 
 class MyState extends State<MySecondWidget>{
 
-  String url = "https://source.unsplash.com/random/800x600"; // A random image from Unsplash
+  String url = "https://images.pexels.com/photos/4344467/pexels-photo-4344467.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"; // A random image from Unsplash
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class MyState extends State<MySecondWidget>{
 
   void changeURI() {
     setState(() {
-      url = "https://source.unsplash.com/random/800x600/?" +
+      url = "https://images.pexels.com/photos/4344467/pexels-photo-4344467.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" +
           "q=${new DateTime.now().millisecondsSinceEpoch}";
     });
   }
